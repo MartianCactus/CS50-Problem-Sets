@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function clearBg(){
+                let buttons = document.querySelectorAll('button')
+                for(let i = 0; i < buttons.length; i++){
+
+                    buttons[i].style.backgroundColor = "white";
+                }
+            }
+
+            function right(){
+                clearBg();
+                document.querySelector('#correct').style.backgroundColor = 'green';
+                document.querySelector('#message').innerHTML = 'Correct!';
+            }
+            function wrong(int){
+                clearBg();
+                let incorrect_but = document.querySelectorAll('.incorrect');
+                incorrect_but[int].style.backgroundColor = 'red';
+                document.querySelector('#message').innerHTML = 'Incorrect!';
+            }
+
+            function submit(){
+                let inp = document.querySelector('#input').value;
+
+                if(inp.toLowerCase() == "park"){
+                    document.querySelector('#place').innerHTML = 'Correct!';
+                    document.querySelector('#input').style.color = "green";
+
+                }
+                else{
+                    document.querySelector('#place').innerHTML = 'Inorrect!';
+                    document.querySelector('#input').style.color = "red";
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What da dog doin</h3>
+                <button onclick="wrong(0)" class="incorrect">Poopin</button>
+                <button onclick="wrong(1)" class="incorrect">Peein</button>
+                <button onclick="right()" id="correct">Eatin</button>
+                <P id="message"></P>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Where da dog at?</h3>
+                <input type="text" id="input">
+                <button onclick="submit()" id="submit">Submit</button>
+                <p id="place"></p>
+
+            </div>
+        </div>
+    </body>
+</html>

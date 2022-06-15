@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Hey, Im Aditya</title>
+    </head>
+    <body>
+        <!-- Introduction -->
+        <div>
+            <h1>Hey! Im Aditya, great to have you here.</h1>
+
+            <p class="text"> This is my website for the cs50 pset8 solution. Since along with using bootstrap , we also need
+                to experiment with our own javascript code and css, I have decided to make this introduction page
+                entirely in <i>my own styling and logic</i>. I am very excited to use <b>Bootstrap</b> and all the functionality
+                it provides. But I will be doing that in the upcoming pages.
+            </p>
+
+            <hr>
+            <!-- Image of me with doggo -->
+            <img id='mypic' src="images/me.png" alt="Me with mydoggo">
+
+            <p class="text">This is an image of me and my doggo named J.</p>
+        </div>
+        <h6 class="text">Now I will include some buttons with js scripts to take you to other sections of my page:</h6>
+        <a href="hobbies.html" class="button" onmouseover = mouseon() onmouseout = mouseoff()>
+            My hobbies
+        </a>
+        <a href="doggo.html" class="button" onmouseover = mouseon() onmouseout = mouseoff()>
+            My Doggo
+        </a>
+        <a href="life.html" class="button" onmouseover = mouseon() onmouseout = mouseoff()>
+            Life
+        </a>
+        <script>
+            function mouseon(){
+                but = event.currentTarget;
+                but.style.backgroundColor = "#51a9e8";
+                but.style.color = "white";
+
+            }
+            function mouseoff(){
+                but = event.currentTarget;
+                but.style.backgroundColor = "white";
+                but.style.color = "green";
+            }
+        </script>
+    </body>
+</html>
